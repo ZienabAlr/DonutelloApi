@@ -2,16 +2,7 @@ const express = require('express');
 const router = express.Router();
 const donutelloController = require('../../../controllers/api/v1/donutello');
 
-router.get('/', (req, res) => {
-
-    res.json({
-        "status": "success",
-        "data": {
-            "donuts": []    
-        }
-    });
-
-});
+router.get('/', donutelloController.getAllDonuts);
 
 router.post('/', (req, res) => {
 
