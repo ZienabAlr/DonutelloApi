@@ -9,3 +9,5 @@ const getAllDonuts = (req, res) => {
     });
 
 }
+
+module.exports.getAllDonuts = getAllDonuts;
