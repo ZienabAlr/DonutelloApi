@@ -20,15 +20,19 @@ const getAllDonuts = (req, res) => {
 
 const createDonut = (req, res) => {
 
-    res.json({
-        "status": "success",
-        "data": {
-            "donut": {
-                "name": "Chocolate Frosted",
-                "topping": "Chocolate",
-                "price": 2.50
-            }
-        }
+    let newDonut = new Donut();
+    newDonut.name = "Chocolate Frosted";
+    newDonut.topping = "Chocolate";
+    newDonut.price = 2.50;
+    newDonut.save((err, doc)=> {
+        if (!err) {
+            res.json({
+                "status": "success",
+                "data": {
+                    "donut": doc
+                }
+            });
+        } 
     });
 
 }
