@@ -1,3 +1,11 @@
+const mongoose = require('mongoose');
+const schema = mogoose.Schema;
+const donutSchema = new schema({
+    name: String,
+    topping: String,
+    price: Number
+});
+const Donut = mongoose.model('Donut', donutSchema);
 
 const getAllDonuts = (req, res) => {
 
