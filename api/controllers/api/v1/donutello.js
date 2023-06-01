@@ -1,3 +1,4 @@
+const Donut = require('../../../models/Donut');
 
 const getAllDonuts = (req, res) => {
 
