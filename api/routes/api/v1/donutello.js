@@ -10,4 +10,6 @@ router.get('/:id', donutelloController.getDonut);
 
 router.put('/:id', donutelloController.updateDonut);
 
+router.delete('/:id', donutelloController.deleteDonut);
+
 module.exports = router;
