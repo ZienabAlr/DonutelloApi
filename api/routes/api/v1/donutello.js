@@ -6,4 +6,6 @@ router.get('/', donutelloController.getAllDonuts);
 
 router.post('/', donutelloController.createDonut); 
 
+router.get('/:id', donutelloController.getDonut);
+
 module.exports = router;
