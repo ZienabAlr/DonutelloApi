@@ -1,15 +1,7 @@
+const { response } = require('express');
 const Donut = require('../../../models/Donutello');
 
-const getAllDonuts = (req, res) => {
 
-    res.json({
-        "status": "success",
-        "data": {
-            "donuts": []    
-        }
-    });
-
-}
 
 const createDonut = (req, res) => {
 
@@ -38,6 +30,16 @@ const createDonut = (req, res) => {
 
 
 };
+
+const getAllDonuts = (req, res) => {
+
+    res.json({
+        "status": "success",
+        "data": {
+            "donuts": []
+        }
+    });
+}
 
 const getDonut = (req, res) => {
 
