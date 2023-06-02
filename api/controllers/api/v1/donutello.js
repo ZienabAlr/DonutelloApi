@@ -59,6 +59,17 @@ const updateDonut = (req, res) => {
 
 }
 
+const deleteDonut = (req, res) => {
+
+    res.json({
+        "status": "success",
+        "data": {
+            "donut": []
+        }
+    });
+
+}
+
 
 
 module.exports.createDonut = createDonut;
