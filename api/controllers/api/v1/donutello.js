@@ -64,3 +64,4 @@ const updateDonut = (req, res) => {
 module.exports.createDonut = createDonut;
 module.exports.getAllDonuts = getAllDonuts;
 module.exports.getDonut = getDonut;
+module.exports.updateDonut = updateDonut;
