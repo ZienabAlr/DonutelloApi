@@ -1,4 +1,4 @@
-const Donut = require('../../../models/Donut');
+const Donut = require('../../../models/Donutello');
 
 const getAllDonuts = (req, res) => {
 
