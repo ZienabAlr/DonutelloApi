@@ -39,6 +39,16 @@ const createDonut = (req, res) => {
 
 };
 
+const getDonut = (req, res) => {
+
+    res.json({
+        "status": "success",
+        "data":[]
+    });
+
+}
+
+
 
 module.exports.createDonut = createDonut;
 module.exports.getAllDonuts = getAllDonuts;
