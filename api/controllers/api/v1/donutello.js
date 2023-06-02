@@ -48,6 +48,17 @@ const getDonut = (req, res) => {
 
 }
 
+const updateDonut = (req, res) => {
+
+    res.json({
+        "status": "success",
+        "data": {
+            "donut": []
+        }
+    });
+
+}
+
 
 
 module.exports.createDonut = createDonut;
