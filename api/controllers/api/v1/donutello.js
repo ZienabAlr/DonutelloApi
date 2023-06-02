@@ -76,3 +76,4 @@ module.exports.createDonut = createDonut;
 module.exports.getAllDonuts = getAllDonuts;
 module.exports.getDonut = getDonut;
 module.exports.updateDonut = updateDonut;
+module.exports.deleteDonut = deleteDonut;
