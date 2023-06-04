@@ -13,6 +13,7 @@ const createDonut = (req, res) => {
     donut.glaze = req.body.glaze;
     donut.amount = req.body.amount;
     donut.notes = req.body.notes;
+    donut.status = "default";
     donut.completed = false; 
     donut.save().then( result => {
        
