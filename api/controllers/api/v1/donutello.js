@@ -13,7 +13,7 @@ const createDonut = (req, res) => {
     donut.glaze = req.body.glaze;
     donut.amount = req.body.amount;
     donut.notes = req.body.notes;
-    donut.status = "default";
+    donut.status = "To do";
     donut.completed = false; 
     donut.save().then( result => {
        
@@ -32,14 +32,22 @@ const createDonut = (req, res) => {
 
 };
 
+// get all the donuts in the database
 const getAllDonuts = (req, res) => {
 
-    res.json({
-        "status": "success",
-        "data": {
-            "donuts": []
-        }
+    Donut.find().then((result) => {
+        res.json({
+            "status": "success",
+            "data": {
+                "donuts": result
+            }
+        })
+    }).catch((err) => {
+        res.json({
+            "status": "error"
+        })
     });
+
 }
 
 const getDonut = (req, res) => {
