@@ -7,7 +7,8 @@ const donutSchema = new Schema({
     donutname: String,
     glaze: String,
     amount: Number,
-    notes: String
+    notes: String,
+    status: String,
 
 })
 const Donut = mongoose.model('Donut', donutSchema);
