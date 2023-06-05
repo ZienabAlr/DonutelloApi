@@ -52,11 +52,17 @@ const getAllDonuts = (req, res) => {
 // get a single donut by id
 const getDonut = (req, res) => {
 
-    res.json({
-        "status": "success",
-        "data": {
-            "donut": []
-        }
+    Donut.findById(req.params.id).then((result) => {
+        res.json({
+            "status": "success",
+            "data": {
+                "donut": result
+            }
+        })
+    }).catch((err) => {
+        res.json({
+            "status": "error"
+        })
     });
 
 }
