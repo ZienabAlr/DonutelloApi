@@ -49,15 +49,18 @@ const getAllDonuts = (req, res) => {
     });
 
 }
-
+// get a single donut by id
 const getDonut = (req, res) => {
 
     res.json({
         "status": "success",
-        "data":[]
+        "data": {
+            "donut": []
+        }
     });
 
 }
+
 
 const updateDonut = (req, res) => {
 
@@ -70,16 +73,35 @@ const updateDonut = (req, res) => {
 
 }
 
+// const deleteDonut = (req, res) => {
+
+//     res.json({
+//         "status": "success",
+//         "data": {
+//             "donut": []
+//         }
+//     });
+
+// }
+
+// delete a donut by id
 const deleteDonut = (req, res) => {
 
-    res.json({
-        "status": "success",
-        "data": {
-            "donut": []
-        }
+    Donut.findByIdAndDelete(req.params.id).then((result) => {
+        res.json({
+            "status": "success",
+            "data": {
+                "donut": result
+            }
+        })
+    }).catch((err) => {
+        res.json({
+            "status": "error"
+        })
     });
 
 }
+
 
 
 
