@@ -49,7 +49,7 @@ const getAllDonuts = (req, res) => {
     });
 
 }
-// get a single donut by id
+
 const getDonut = (req, res) => {
 
     Donut.findById(req.params.id).then((result) => {
@@ -69,28 +69,32 @@ const getDonut = (req, res) => {
 
 
 const updateDonut = (req, res) => {
-
-    res.json({
-        "status": "success",
-        "data": {
-            "donut": []
-        }
-    });
+    
+        Donut.findByIdAndUpdate(req.params.id, {
+            company: req.body.company,
+            email: req.body.email,
+            phone: req.body.phone,
+            donutname: req.body.donutname,
+            glaze: req.body.glaze,
+            amount: req.body.amount,
+            notes: req.body.notes,
+            status: req.body.status,
+            completed: req.body.completed
+        }).then((result) => {
+            res.json({
+                "status": "success",
+                "data": {
+                    "donut": result
+                }
+            })
+        }).catch((err) => {
+            res.json({
+                "status": "error"
+            })
+        });
 
 }
 
-// const deleteDonut = (req, res) => {
-
-//     res.json({
-//         "status": "success",
-//         "data": {
-//             "donut": []
-//         }
-//     });
-
-// }
-
-// delete a donut by id
 const deleteDonut = (req, res) => {
 
     Donut.findByIdAndDelete(req.params.id).then((result) => {
